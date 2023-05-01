@@ -1,6 +1,6 @@
-module Lib
-    ( someFunc
-    ) where
+data elemento = elemento String String Int
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+data componentes = componentes (elemento|compuesto) int 
+
+ compuesto = [componentes]
+
