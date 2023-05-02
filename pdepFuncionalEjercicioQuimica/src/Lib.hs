@@ -47,7 +47,7 @@ sodio = Elemento "Sodio" "Na" 11 "metal"
 
 
 agua :: Sustancia
-agua = Compuesto [Componente hidrogeno 2, Componente oxigeno 2] "No metal" "agua"
+agua = Compuesto [Componente hidrogeno 2, Componente oxigeno 1] "No metal" "agua"
 sal:: Sustancia
 sal = Compuesto [Componente cloro 1 , Componente sodio 1] "No metal" "sal"
 
@@ -79,5 +79,9 @@ mezclar (Componente element1 cantidad1) (Componente element2 cantidad2)   = Comp
 
 formula :: Sustancia -> String
 formula (Elemento _ simboloQuimico _ _) = simboloQuimico
+formula (Compuesto lista _ _) = "(" ++ concat (map  buscarSimbolo  lista) ++ ")"
 
-formula (Compuesto lista _ _) = 
+buscarSimbolo :: Componente -> String
+buscarSimbolo (Componente elemento cantidad)  
+                                            | cantidad> 1 = simboloQuimico elemento ++ show cantidad
+                                            | cantidad == 1 = simboloQuimico elemento
