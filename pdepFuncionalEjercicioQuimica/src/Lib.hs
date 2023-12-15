@@ -11,6 +11,8 @@ data Sustancia=
                 numeroAtomico   :: Int,
                 tipoDeSustancia :: String
 
+
+
               } 
               |Compuesto{
                 componente :: [Componente],
