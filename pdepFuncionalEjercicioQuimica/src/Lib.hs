@@ -10,6 +10,7 @@ data Sustancia=
                 simboloQuimico  :: String, 
                 numeroAtomico   :: Int,
                 tipoDeSustancia :: String
+
               } 
               |Compuesto{
                 componente :: [Componente],
